@@ -36,9 +36,8 @@ namespace SquareDinoTestTask
             if (_hp <= 0)
             {
                 _hp = 0;
-                _onDeath?.Invoke();
-                
                 Notify();
+                _onDeath?.Invoke();
             }
         }
     }

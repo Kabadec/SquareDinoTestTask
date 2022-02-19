@@ -8,7 +8,7 @@ namespace SquareDinoTestTask
     {
         [SerializeField] private Transform _waypoint;
         [SerializeField] private GameObject _enemyContainer;
-        [SerializeField] private Vector3 _cameraWaypoint;
+        [SerializeField] private Transform _cameraWaypoint;
 
         private List<ISubject> _enemies = new List<ISubject>();
         private List<IObserver> _observers = new List<IObserver>();
@@ -23,9 +23,10 @@ namespace SquareDinoTestTask
             }
         }
 
-        public void SelectThisArea()
+        public void SelectThisArea(IMovable hero)
         {
-            
+            hero.MoveTo(_waypoint.position);
+            CameraController.Instance.CameraMoveTo(_cameraWaypoint);
         }
 
         public void TakeNotify(ISubject subject)
@@ -48,7 +49,8 @@ namespace SquareDinoTestTask
 
         public void Notify()
         {
-            foreach (var observer in _observers)
+            var observers = new List<IObserver>(_observers);
+            foreach (var observer in observers)
             {
                 observer.TakeNotify(this);
             }

@@ -42,7 +42,7 @@ GameObject:
   m_Layer: 0
   m_Name: CameraWaypoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -102,7 +102,7 @@ GameObject:
   m_Layer: 0
   m_Name: Waypoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -169,4 +169,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waypoint: {fileID: 5439036771297254511}
   _enemyContainer: {fileID: 5338816463609331168}
-  _cameraWaypoint: {x: 0, y: 0, z: 0}
+  _cameraWaypoint: {fileID: 108275991040220494}

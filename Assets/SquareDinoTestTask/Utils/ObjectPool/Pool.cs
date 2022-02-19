@@ -23,7 +23,7 @@ namespace SquareDinoTestTask.Utils.ObjectPool
             }
         }
 
-        public GameObject Get(GameObject go, Vector3 position, Vector3 scale)
+        public GameObject Get(GameObject go, Vector3 position)
         {
             var id = go.GetInstanceID();
             var queue = RequireQueue(id);
@@ -34,7 +34,6 @@ namespace SquareDinoTestTask.Utils.ObjectPool
                 var pooledItemTransform = pooledItem.transform;
 
                 pooledItemTransform.position = position;
-                pooledItemTransform.localScale = scale;
                 pooledItem.gameObject.SetActive(true);
                 pooledItem.Restart();
 
@@ -42,7 +41,6 @@ namespace SquareDinoTestTask.Utils.ObjectPool
             }
 
             var instance = SpawnUtils.Spawn(go, position, gameObject.name);
-            instance.transform.localScale = scale;
 
             var poolItem = instance.GetComponent<PoolItem>();
             poolItem.Retain(id, this);
