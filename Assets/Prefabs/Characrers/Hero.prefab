@@ -45,14 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4489d848f58ce7b4f90048c7cabe7853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainCamera: {fileID: 0}
   _agent: {fileID: 5278594788105871898}
   _animator: {fileID: 1741697164067964096}
   _velocityToLockInput: 0.1
   _projectile: {fileID: 4044440325967750233, guid: d77ffc94071b44c49932cf5a6acc139f,
     type: 3}
   _projectileSpawnOffset: {x: 0, y: 1.2, z: 0}
-  _shootDelay: 0.5
+  _shootDelay: 0.2
 --- !u!195 &5278594788105871898
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -1612,7 +1612,7 @@ PrefabInstance:
     - target: {fileID: 5278594788105871877, guid: 8ffa5b1286b475341af9b3e9e05f4f4c,
         type: 3}
       propertyPath: _shootDelay
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5278594788105871877, guid: 8ffa5b1286b475341af9b3e9e05f4f4c,
         type: 3}
