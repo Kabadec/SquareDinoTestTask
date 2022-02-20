@@ -6,7 +6,7 @@
             "id": "cb9ce42f-4b7e-425f-98ae-0dbd47774905",
             "actions": [
                 {
-                    "name": "LmbClick",
+                    "name": "TouchTap",
                     "type": "Button",
                     "id": "22f1c035-2373-4ca0-bd1e-4a384d08cdc5",
                     "expectedControlType": "Button",
@@ -14,7 +14,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "MousePosition",
+                    "name": "TouchPosition",
                     "type": "PassThrough",
                     "id": "50dbb9b2-ac26-4cad-b8d4-7cfe654733d8",
                     "expectedControlType": "Vector2",
@@ -26,22 +26,22 @@
                 {
                     "name": "",
                     "id": "9c803efd-6d04-4749-ae1e-e76b09b11688",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Touchscreen>/primaryTouch/tap",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "LmbClick",
+                    "action": "TouchTap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "87fd78b7-0f12-4b9a-8563-7f52d20d8ed5",
-                    "path": "<Mouse>/position",
+                    "path": "<Touchscreen>/primaryTouch/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MousePosition",
+                    "action": "TouchPosition",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

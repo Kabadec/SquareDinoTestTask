@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4067153501982153903}
   - component: {fileID: 3147305460542767365}
   - component: {fileID: 4044440325967750234}
+  - component: {fileID: 6686154443581273886}
   - component: {fileID: 4044440325967750235}
   - component: {fileID: 4044440325967750232}
   - component: {fileID: 6116045150433437023}
@@ -114,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layer:
     serializedVersion: 2
-    m_Bits: 439
+    m_Bits: 407
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -130,9 +131,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4044440325967750235}
-        m_TargetAssemblyTypeName: SquareDinoTestTask.BulletComponent, Assembly-CSharp
-        m_MethodName: DealDamage
+      - m_Target: {fileID: 6686154443581273886}
+        m_TargetAssemblyTypeName: SquareDinoTestTask.ModifyHealthComponent, Assembly-CSharp
+        m_MethodName: ModifyHealth
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -154,6 +155,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6686154443581273886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4044440325967750233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57bac23fe7494257a9602d62eee7e4e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hpDelta: -1
 --- !u!114 &4044440325967750235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,8 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55fe975d3b1446b99bf4e1c0aa4253e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 1
-  _speed: 10
+  _speed: 15
   _lifeTime: 10
 --- !u!114 &4044440325967750232
 MonoBehaviour:

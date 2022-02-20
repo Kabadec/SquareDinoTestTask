@@ -19,7 +19,7 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
             ""id"": ""cb9ce42f-4b7e-425f-98ae-0dbd47774905"",
             ""actions"": [
                 {
-                    ""name"": ""LmbClick"",
+                    ""name"": ""TouchTap"",
                     ""type"": ""Button"",
                     ""id"": ""22f1c035-2373-4ca0-bd1e-4a384d08cdc5"",
                     ""expectedControlType"": ""Button"",
@@ -27,7 +27,7 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""MousePosition"",
+                    ""name"": ""TouchPosition"",
                     ""type"": ""PassThrough"",
                     ""id"": ""50dbb9b2-ac26-4cad-b8d4-7cfe654733d8"",
                     ""expectedControlType"": ""Vector2"",
@@ -39,22 +39,22 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""9c803efd-6d04-4749-ae1e-e76b09b11688"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""LmbClick"",
+                    ""action"": ""TouchTap"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""87fd78b7-0f12-4b9a-8563-7f52d20d8ed5"",
-                    ""path"": ""<Mouse>/position"",
+                    ""path"": ""<Touchscreen>/primaryTouch/position"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MousePosition"",
+                    ""action"": ""TouchPosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -126,8 +126,8 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
 }");
         // Hero
         m_Hero = asset.FindActionMap("Hero", throwIfNotFound: true);
-        m_Hero_LmbClick = m_Hero.FindAction("LmbClick", throwIfNotFound: true);
-        m_Hero_MousePosition = m_Hero.FindAction("MousePosition", throwIfNotFound: true);
+        m_Hero_TouchTap = m_Hero.FindAction("TouchTap", throwIfNotFound: true);
+        m_Hero_TouchPosition = m_Hero.FindAction("TouchPosition", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -177,14 +177,14 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
     // Hero
     private readonly InputActionMap m_Hero;
     private IHeroActions m_HeroActionsCallbackInterface;
-    private readonly InputAction m_Hero_LmbClick;
-    private readonly InputAction m_Hero_MousePosition;
+    private readonly InputAction m_Hero_TouchTap;
+    private readonly InputAction m_Hero_TouchPosition;
     public struct HeroActions
     {
         private @HeroInputActions m_Wrapper;
         public HeroActions(@HeroInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @LmbClick => m_Wrapper.m_Hero_LmbClick;
-        public InputAction @MousePosition => m_Wrapper.m_Hero_MousePosition;
+        public InputAction @TouchTap => m_Wrapper.m_Hero_TouchTap;
+        public InputAction @TouchPosition => m_Wrapper.m_Hero_TouchPosition;
         public InputActionMap Get() { return m_Wrapper.m_Hero; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -194,22 +194,22 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_HeroActionsCallbackInterface != null)
             {
-                @LmbClick.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnLmbClick;
-                @LmbClick.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnLmbClick;
-                @LmbClick.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnLmbClick;
-                @MousePosition.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnMousePosition;
-                @MousePosition.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnMousePosition;
-                @MousePosition.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnMousePosition;
+                @TouchTap.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnTouchTap;
+                @TouchTap.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnTouchTap;
+                @TouchTap.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnTouchTap;
+                @TouchPosition.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnTouchPosition;
+                @TouchPosition.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnTouchPosition;
+                @TouchPosition.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnTouchPosition;
             }
             m_Wrapper.m_HeroActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @LmbClick.started += instance.OnLmbClick;
-                @LmbClick.performed += instance.OnLmbClick;
-                @LmbClick.canceled += instance.OnLmbClick;
-                @MousePosition.started += instance.OnMousePosition;
-                @MousePosition.performed += instance.OnMousePosition;
-                @MousePosition.canceled += instance.OnMousePosition;
+                @TouchTap.started += instance.OnTouchTap;
+                @TouchTap.performed += instance.OnTouchTap;
+                @TouchTap.canceled += instance.OnTouchTap;
+                @TouchPosition.started += instance.OnTouchPosition;
+                @TouchPosition.performed += instance.OnTouchPosition;
+                @TouchPosition.canceled += instance.OnTouchPosition;
             }
         }
     }
@@ -261,7 +261,7 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
     }
     public interface IHeroActions
     {
-        void OnLmbClick(InputAction.CallbackContext context);
-        void OnMousePosition(InputAction.CallbackContext context);
+        void OnTouchTap(InputAction.CallbackContext context);
+        void OnTouchPosition(InputAction.CallbackContext context);
     }
 }
